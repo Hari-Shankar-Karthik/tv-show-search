@@ -1,7 +1,10 @@
+import { Container } from "react-bootstrap";
+import TVShowSearch from "./TVShowSearch";
+
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello, world!</h1>
-    </div>
+    <Container>
+      <TVShowSearch />
+    </Container>
   );
 }
