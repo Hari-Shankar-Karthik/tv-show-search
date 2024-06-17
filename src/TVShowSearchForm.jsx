@@ -1,4 +1,7 @@
-import { Form, Row, Col, InputGroup, Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import { useForm, Controller } from "react-hook-form";
 
 export default function TVShowSearchForm({ onSubmit }) {
@@ -9,7 +12,7 @@ export default function TVShowSearchForm({ onSubmit }) {
     formState: { errors, isSubmitted },
   } = useForm();
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} className="mb-3">
       <Row className="mb-3 justify-content-center">
         <Form.Group as={Col} md="4">
           <Form.Label htmlFor="searchFor">Search For</Form.Label>
@@ -40,9 +43,6 @@ export default function TVShowSearchForm({ onSubmit }) {
               {errors.searchFor.message}
             </Form.Text>
           )}
-          {isSubmitted && !errors.searchFor && (
-            <Form.Text className="text-success">Looks good!</Form.Text>
-          )}
         </Form.Group>
         <Form.Group as={Col} md="4">
           <Form.Label htmlFor="searchKeyword">Search Keyword</Form.Label>
@@ -61,9 +61,6 @@ export default function TVShowSearchForm({ onSubmit }) {
             <Form.Text className="text-danger">
               {errors.searchKeyword.message}
             </Form.Text>
-          )}
-          {isSubmitted && !errors.searchKeyword && (
-            <Form.Text className="text-success">Looks good!</Form.Text>
           )}
         </Form.Group>
       </Row>
